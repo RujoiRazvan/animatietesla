@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tesla Cyber Truck</title>
+<style>
+  body{
+    padding: 0;
+    margin: 0;
+  }
+  
+  @font-face {
+    font-family: tesla;
+    src: url(tesla.ttf);
+  }
+  
+  .h1{
+    font-family: 'tesla';
+    color: #eb2127;
+    text-align: center;
+    font-size: 55px;
+    padding-top: 25vh;
+    padding-bottom: 5vh;
+    animation:appear 2s linear;
+    position: relative;
+  }
+  
+  .img{
+    background: url('bg.jpg') rgba(0,0,0,0.5);
+    background-size: cover;
+    height: 100vh;  
+    animation:flash 2s linear;
+  }
+  
+  .truck{
+    position: absolute;
+    left: calc((100% - 627px) / 2);
+    animation:appear 2s linear;
+	  animation: bounce 2s infinite;
+  }
+  
+  .wheel1{
+    position: absolute;
+    left: 10%;
+    top: 53%;
+    animation:spin 3s linear infinite;
+  }
+  
+  .wheel2{
+    position: absolute;
+    left: 69%;
+    top: 53%;
+    animation:spin 3s linear infinite;
+  }
+  
+  
+  @-webkit-keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(-360deg);}
+  }
+  
+  @-webkit-keyframes flash {
+    0% {background: url(bg.jpg);}
+    3% {background: #fff;}
+    6% {background: url(bg.jpg);}
+    9% {background: #fff;}
+    15% {background: url(bg.jpg);}
+    20% {background: #fff;}
+  }
+  
+  @-webkit-keyframes appear {
+    0%{opacity: 0;}
+    75%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+	
+	@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  
+
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+</style>
+</head>
+<body>
+
+<div class="img">
+  <div class="h1">Tesla Cyber Truck</div>
+  <div class="truck">
+    <img src="truck.png" alt="caroserie" />
+    <img class="wheel1" alt="roata" src="wheel.png" />
+    <img class="wheel2" alt="roata" src="wheel.png" />
+  </div>
+</div>
+
+</body>
+</html>
